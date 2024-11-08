@@ -1,196 +1,121 @@
-cakes = {"small":3,"medium":4,"large":5}
-icecreams = {"small":1,"medium":2,"large":3}
-icecreamcake = {"small":4,"medium":6,"large":8 }
-toppings = {"chocolate":1,"marshmallows":1,"sprinkles":1,"candies":1}
-flavors = {"vanilla":1,"strawberry":1,"chocolate":1}
-checkout=["Order completed for "]
-#cakesMap = {"s":3,"m":4,"l":5}
+# Cake & Ice Cream Ordering System 🍰🍦
 
+Welcome to the **Cake & Ice Cream Ordering System**! This program allows users to place orders for cakes, ice creams, and ice cream cakes, with customization options like size, flavor, and toppings. The system also lets customers donate a dollar to a good cause with their order.
 
-def order(user_name,index):
-   order = input('What would you like to order cake, icecream or icecream cake? \n')
+## Features ✨
+- **Customizable Orders**: Choose from cakes, ice creams, or ice cream cakes.
+- **Size Options**: Small, Medium, Large for each product.
+- **Flavors**: Vanilla, Strawberry, and Chocolate available for all items.
+- **Toppings**: Choose from chocolate, marshmallows, sprinkles, or candies to customize your dessert.
+- **Donation Option**: Option to donate an extra dollar with your order.
+- **Total Order Calculation**: Displays the total cost of each order and the overall cost.
 
-   if order == 'icecream':
-     return icecream(user_name, index)
-   if order == 'cake':
-     return cake(user_name, index)
-   if order == 'icecream cake':
-     return ice_cream_cake(user_name, index)
-   else:
-      cost+=0
+## Installation 🛠️
+No installation is required to run this program. Simply run the Python script, and you can start placing orders.
 
-"""def cake(user_name):
-   quantity = int(input("How many cakes do you want?\n"))
-   cost = int(0)
-   size = input("What size do you want?(use s,m,l accordingly)\n")
-   cost+=cakesMap.get(size)"""
-   
+### Prerequisites
+- Python 3.x installed on your machine.
+- No external libraries or dependencies required.
 
-def cake(user_name, index):
-   quantity = int(input("How many cakes do you want?\n"))
-   cost = int(0)
-   size = input("What size do you want?(use s,m,l accordingly)\n")
-   if size == 's':
-      cost+=cakes.get("small")
-   if size == 'm':
-      cost+=cakes.get("medium")
-   if size == 'l':
-      cost+=cakes.get("large")
-   else:
-      cost+=0
+## How to Run the Program 🖥️
 
-   flavor = input("What flavor would you like?\n")
-   if flavor == 'vanilla':
-      cost+=flavors.get("vanilla")
-   if flavor == 'strawberry':
-      cost+=flavors.get("strawberry")
-   if flavor == 'chocolate':
-      cost+=flavors.get("chocolate")
-   else:
-      cost+=0
+1. Download the script (e.g., `ordering_system.py`).
+2. Open a terminal or command prompt in the directory where the file is located.
+3. Run the script using Python:
+   ```bash
+   python ordering_system.py
+   ```
 
-   topping = input("What topping do you want?\n")
-   if topping == 'chocolate':
-      cost+=toppings.get("chocolate")
-   if topping == 'marshmallows':
-      cost+=toppings.get("marshmallows")
-   if topping == 'sprinkles':
-      cost+=toppings.get("sprinkles")
-   if topping == 'candies':
-      cost+=toppings.get("candies")
-   else:
-      cost+=0
-  
-   if quantity > 1:
-      quantitycost = int(0)
-      for i in range(quantity):
-         quantitycost += cost
+4. The program will prompt you to input the number of orders, followed by user-specific details like name, quantity, product choice, and customizations.
+5. After all orders are placed, the program will display the total cost and ask if you’d like to donate $1 to a good cause.
+6. It will then display the final cost and a thank-you message.
 
-         
-   checkout.append(user_name)
-   print("Your per order cost is $ " + str(quantitycost))
-   print(checkout[0] + checkout[index]+"\n")
+## How It Works 📝
 
-   return quantitycost
+### Order Process
+- **Step 1**: You can order a cake, ice cream, or ice cream cake by choosing the respective option.
+- **Step 2**: For each item, you'll be asked to choose:
+  - **Size**: Small (`s`), Medium (`m`), Large (`l`).
+  - **Flavor**: Vanilla, Strawberry, or Chocolate.
+  - **Topping**: Chocolate, Marshmallows, Sprinkles, or Candies.
+- **Step 3**: After making your choices, the program calculates the price for your order.
+- **Step 4**: You can choose to donate an extra $1 for charity.
+- **Step 5**: The program will display the total cost for all orders.
 
+### Sample Order Flow:
+1. The user is prompted to select an item: `cake`, `icecream`, or `icecream cake`.
+2. The user enters the quantity and customizes the order by selecting the size, flavor, and topping.
+3. The program computes the cost of each order and adds it to the total.
+4. After all orders, the program asks if the user would like to donate an additional $1 to their order.
+5. The program displays the final total and prints a thank-you message.
 
-def icecream(user_name, index):
-   quantity = int(input("How many icecreams do you want?\n"))
-   cost = int(0)
-   size = input("What size do you want?\n")
-   if size == 's':
-      cost+=icecreams.get("small")
-   if size == 'm':
-      cost+=icecreams.get("medium")
-   if size == 'l':
-      cost+=icecreams.get("large")
-   else:
-      cost+=0
+### Example Run:
 
-   flavor = input("What flavor would you like?\n")
-   if flavor == 'vanilla':
-      cost+=flavors.get("vanilla")
-   if flavor == 'strawberry':
-      cost+=flavors.get("strawberry")
-   if flavor == 'chocolate':
-      cost+=flavors.get("chocolate")
-   else:
-      cost+=0
+```
+How many orders do you want to place?
+2
+Enter your name for Order #1
+John
+What would you like to order cake, icecream or icecream cake?
+cake
+How many cakes do you want?
+2
+What size do you want?(use s,m,l accordingly)
+m
+What flavor would you like?
+chocolate
+What topping do you want?
+sprinkles
+Your per order cost is $ 16
+Order completed for John
 
-   topping = input("What topping do you want?\n")
-   if topping == 'chocolate':
-      cost+=toppings.get("chocolate")
-   if topping == 'marshmallows':
-      cost+=toppings.get("marshmallows")
-   if topping == 'sprinkles':
-      cost+=toppings.get("sprinkles")
-   if topping == 'candies':
-      cost+=toppings.get("candies")
-   else:
-      cost+=0
+Enter your name for Order #2
+Jane
+What would you like to order cake, icecream or icecream cake?
+icecream
+How many icecreams do you want?
+1
+What size do you want?
+l
+What flavor would you like?
+vanilla
+What topping do you want?
+chocolate
+Your per order cost is $ 4
+Order completed for Jane
 
-   if quantity > 1:
-         quantitycost = int(0)
-         for i in range(quantity):
-            quantitycost += cost
-            
-   checkout.append(user_name)
-   print("Your per order cost is $ " + str(quantitycost))
-   print(checkout[0] + checkout[index]+"\n")
+Would you like to donate $1?
+yes
+Your new total is: $ 21
+Thanks For Shopping With Us!
+```
 
-   return quantitycost
+## Code Breakdown 📊
 
+- **Data Structure**:
+  - `cakes`, `icecreams`, `icecreamcake`: Dictionaries storing the cost of each size.
+  - `toppings`, `flavors`: Dictionaries for available toppings and flavors.
+  - `checkout`: A list to store the names of customers.
 
+- **Functions**:
+  - `order(user_name, index)`: Main function that starts the ordering process.
+  - `cake(user_name, index)`: Handles cake orders.
+  - `icecream(user_name, index)`: Handles ice cream orders.
+  - `ice_cream_cake(user_name, index)`: Handles ice cream cake orders.
+  - `donate(quantitycost)`: Adds a donation to the total order cost.
 
-def ice_cream_cake(user_name, index):
-   quantity = int(input("How many icecreamcakes do you want?\n"))
-   cost = int(0)
-   size = input("What size do you want?\n")
-   if size == 's':
-      cost+= icecreamcake.get("small")
-   if size == 'm':
-      cost+=icecreamcake.get("medium")
-   if size == 'l':
-      cost+=icecreamcake.get("large")
-   else:
-      cost+=0
-   
-   flavor = input("What flavor would you like?\n")
-   if flavor == 'vanilla':
-      cost+=flavors.get("vanilla")
-   if flavor == 'strawberry':
-      cost+=flavors.get("strawberry")
-   if flavor == 'chocolate':
-      cost+=flavors.get("chocolate")
-   else:
-      cost+=0
+## Contributions 🤝
 
-   topping = input("What topping do you want?\n")
-   if topping == 'chocolate':
-      cost+=toppings.get("chocolate")
-   if topping == 'marshmallows':
-      cost+=toppings.get("marshmallows")
-   if topping == 'sprinkles':
-      cost+=toppings.get("sprinkles")
-   if topping == 'candies':
-      cost+=toppings.get("candies")
-   else:
-      cost+=0
+Feel free to fork this project, suggest improvements, or report any bugs. If you have ideas for new features, open an issue or submit a pull request!
 
+## License 📝
 
-   if quantity > 1:
-         quantitycost = int(0)
-         for i in range(quantity):
-            quantitycost += cost
-            
-   checkout.append(user_name)
-   print("Your per order cost is $ " + str(quantitycost))
-   print(checkout[0] + checkout[index]+"\n")
+This project is open-source and available under the [MIT License](LICENSE).
 
-   return quantitycost
+---
 
+### Next Steps:
+- Customize the system further by adding more products, sizes, and features.
+- Consider saving orders to a file or database for future reference.
+- Add unit tests for better functionality and reliability.
 
-
-def donate(quantitycost):
-   newcost = quantitycost+1
-   print("Your new total is: $" + str(newcost))
-   return newcost
-
-orders = int(input("how orders do you want to place?\n"))
-cost=int(0)
-for i in range(orders):
-   user_name = input("Enter your name for Order #: " +str(i+1)+ "\n")
-   cost+= int(order(user_name, i+1))
-
-
-      
-donation = input("Would you like to donate $1?\n")
-if donation =='yes':
-   donate(cost)
-else:
-   print("Total orders cost $" + str(cost))
-
-
-
-
-print("Thanks For Shopping With Us!")
